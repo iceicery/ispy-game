@@ -1,43 +1,46 @@
 import React from 'react';
 import './App.css';
 import CardList from './components/CardList/CardList';
-import { imagelist } from './utils/cardData';
+import { images, imagelist } from './utils/cardData';
+import Result from './components/Result/Result';
 
-function getImgSrc(arrayOfObject, key) {
-  for (var i = 0; i < arrayOfObject.length; i++) {
-    if (arrayOfObject[i].name === key) {
-      return arrayOfObject[i].src;
+function getTargetArray(arrayOfObject, targets) {
+  let targetArry = [];
+  targets.map((target) => {
+    for (var i = 0; i < arrayOfObject.length; i++) {
+      if (target === arrayOfObject[i].name) {
+        targetArry.push(arrayOfObject[i]);
+      }
     }
-  }
+  });
+  return targetArry;
 }
 
-function getNumberOfTarget(arrayOfObject, target) {
+function getNumberOfTarget(arrayOfObject, targets) {
   let count = 0;
-  for (var i = 0; i < arrayOfObject.length; i++) {
-    if (arrayOfObject[i].name === target) {
-      count += 1;
+  let numberOfTarget = [];
+  targets.map((target) => {
+    for (var i = 0; i < arrayOfObject.length; i++) {
+      if (arrayOfObject[i].name === target) {
+        count += 1;
+      }
     }
-  }
-  return count;
+    numberOfTarget.push(count);
+    count = 0;
+  });
+  return numberOfTarget;
 }
 
-const dogImg = getImgSrc(imagelist, 'dog');
-const pigImg = getImgSrc(imagelist, 'pig');
-console.log(getNumberOfTarget(imagelist, 'pig'));
+const targetArry = getTargetArray(images, ['pig', 'dog']);
+console.log(targetArry);
+console.log(getNumberOfTarget(imagelist, ['pig', 'dog']));
 
 function App() {
   return (
     <div className="App">
       <h1>I-Spy game</h1>
       <CardList images={imagelist} targetName={['dog', 'pig']} />
-      <div>
-        <img src={dogImg} alt="dog" />
-        <p>You found</p>
-        <input type="text"></input>
-        <img src={pigImg} alt="pig" />
-        <p>You found </p>
-        <input type="text"></input>
-      </div>
+      <Result targets={targetArry} />
     </div>
   );
 }

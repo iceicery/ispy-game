@@ -12,7 +12,7 @@ import elephant from '../images/elephant.png';
 import frog from '../images/frog.png';
 import cow from '../images/cow.png';
 
-const images = [
+export const images = [
   { name: 'dog', src: dog },
   { name: 'lamb', src: lamb },
   { name: 'mouse', src: mouse },

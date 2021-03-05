@@ -1,15 +1,14 @@
 .card {
-  width: auto;
   padding: 0;
   margin: 0;
+  width: 100% !important;
+  height: auto !important;
 }
 
 .card__img {
-  width: 100px;
   filter: invert(100%);
 }
 
 .card__img_active {
-  width: 100px;
   filter: invert(0%);
 }
