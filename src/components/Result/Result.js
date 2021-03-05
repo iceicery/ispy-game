@@ -1,27 +1,24 @@
-import React from 'react';
+import React, { useState } from 'react';
+import ResultInput from '../ResultInput/ResultInput';
 import './Result.css';
 
-export default function Result({ targets }) {
+export default function Result({ targets, targetNumber }) {
+  const [inputs, setInputs] = useState(Array(targets.length).fill(''));
+  const setInput = (idx, value) => {
+    setInputs(Object.assign([...inputs], { [idx]: value }));
+  };
   return (
     <ul className="result">
-      {targets.map((target, i) => {
-        return (
-          <li className="result__item" key={i}>
-            <p className="result__text">You found</p>
-            <input
-              className="result__input"
-              type="number"
-              placeholder="How many? (number)"
-            ></input>
-            <img
-              className="result__img"
-              src={target.src}
-              alt={target.name}
-              width="50"
-            />
-          </li>
-        );
-      })}
+      {targets.map((target, i) => (
+        <ResultInput
+          target={target}
+          key={i}
+          idx={i}
+          targetNumber={targetNumber}
+          onChange={setInput}
+          isCorrect={inputs[i]}
+        />
+      ))}
     </ul>
   );
 }

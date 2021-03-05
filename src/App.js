@@ -32,15 +32,14 @@ function getNumberOfTarget(arrayOfObject, targets) {
 }
 
 const targetArry = getTargetArray(images, ['pig', 'dog']);
-console.log(targetArry);
-console.log(getNumberOfTarget(imagelist, ['pig', 'dog']));
+const targetNumber = getNumberOfTarget(imagelist, ['pig', 'dog']);
 
 function App() {
   return (
     <div className="App">
       <h1>I-Spy game</h1>
       <CardList images={imagelist} targetName={['dog', 'pig']} />
-      <Result targets={targetArry} />
+      <Result targets={targetArry} targetNumber={targetNumber} />
     </div>
   );
 }
