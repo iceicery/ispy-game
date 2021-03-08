@@ -31,14 +31,14 @@ function getNumberOfTarget(arrayOfObject, targets) {
   return numberOfTarget;
 }
 
-const targetArry = getTargetArray(images, ['pig', 'dog']);
-const targetNumber = getNumberOfTarget(imagelist, ['pig', 'dog']);
+const targetArry = getTargetArray(images, ['pig', 'dog', 'mouse']);
+const targetNumber = getNumberOfTarget(imagelist, ['pig', 'dog', 'mouse']);
 
 function App() {
   return (
     <div className="App">
       <h1>I-Spy game</h1>
-      <CardList images={imagelist} targetName={['dog', 'pig']} />
+      <CardList images={imagelist} targetName={['dog', 'pig', 'mouse']} />
       <Result targets={targetArry} targetNumber={targetNumber} />
     </div>
   );

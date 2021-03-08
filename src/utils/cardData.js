@@ -47,5 +47,5 @@ function shuffle(images) {
 }
 
 export const imagelist = shuffle(
-  copyImages([2, 3, 4, 4, 5, 5, 6, 6, 3, 4, 2, 4], images)
+  copyImages([2, 3, 4, 4, 5, 5, 6, 6, 3, 4, 2, 4, 3], images)
 );

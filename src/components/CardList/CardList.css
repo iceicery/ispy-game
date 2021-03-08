@@ -1,16 +1,13 @@
 .cardlist {
   list-style: none;
   margin: 0;
-  padding: 20px;
-  /*
-  display: flex;
-  flex-wrap: wrap;*/
+  padding: 10px;
   line-height: 0;
-  -webkit-column-count: 10;
+  -webkit-column-count: 6;
   -webkit-column-gap: 0px;
-  -moz-column-count: 10;
+  -moz-column-count: 6;
   -moz-column-gap: 0px;
-  column-count: 10;
+  column-count: 6;
   column-gap: 0px;
   position: relative;
 }
@@ -21,9 +18,10 @@
   bottom: 0;
   right: 0;
   left: 0;
-  background-color: red;
-  /*
-  background-size: 100px;
-  background-image: url('../../images/bg.png');*/
+  background-color: rgb(211, 55, 55);
   filter: invert(100%);
+}
+
+.cardlist__button {
+  color: violet;
 }

@@ -1,5 +1,6 @@
-import React from 'react';
+import React, { useState } from 'react';
 import './ResultInput.css';
+import resultTranagle from '../../images/blueTriangle.png';
 
 export default function ResultInput({
   target,
@@ -8,7 +9,9 @@ export default function ResultInput({
   onChange,
   isCorrect,
 }) {
+  const [isPopupOpen, setIsPopupOpen] = useState(false);
   function checkIsCorrect(e) {
+    setIsPopupOpen(true);
     if (parseInt(e.target.value) === targetNumber[idx]) {
       onChange(idx, true);
     } else {
@@ -16,22 +19,42 @@ export default function ResultInput({
     }
   }
   return (
-    <li className="result__item">
-      <p className="result__text">You found</p>
+    <li className="resultinput__item">
       <input
-        className="result__input"
+        className="resultinput__input"
         type="number"
         placeholder="How many? (number)"
         name={target}
         onChange={checkIsCorrect}
       ></input>
       <img
-        className="result__img"
+        className="resultinput__img"
         src={target.src}
         alt={target.name}
         width="50"
       />
-      {isCorrect ? <p>Great Job! You found all!</p> : <p>Please try again!</p>}
+      {isPopupOpen &&
+        (isCorrect ? (
+          <div className="resultinput__found">
+            <img
+              width="50"
+              className="resultinput__triangle"
+              src={resultTranagle}
+              alt="talking bubble triangle"
+            />
+            Great Job! You found them all!
+          </div>
+        ) : (
+          <div className="resultinput__found">
+            <img
+              width="50"
+              className="resultinput__triangle"
+              src={resultTranagle}
+              alt="talking bubble triangle"
+            />
+            Try again! You can do it.
+          </div>
+        ))}
     </li>
   );
 }
