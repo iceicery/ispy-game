@@ -1,7 +1,7 @@
 import React from 'react';
 import './App.css';
 import CardList from './components/CardList/CardList';
-import { images, imagelist } from './utils/cardData';
+import { images, imagelist, targetlist } from './utils/cardData';
 import Result from './components/Result/Result';
 
 function getTargetArray(arrayOfObject, targets) {
@@ -31,14 +31,14 @@ function getNumberOfTarget(arrayOfObject, targets) {
   return numberOfTarget;
 }
 
-const targetArry = getTargetArray(images, ['pig', 'dog', 'mouse']);
-const targetNumber = getNumberOfTarget(imagelist, ['pig', 'dog', 'mouse']);
+const targetArry = getTargetArray(images, targetlist);
+const targetNumber = getNumberOfTarget(imagelist, targetlist);
 
 function App() {
   return (
     <div className="App">
       <h1>I-Spy game</h1>
-      <CardList images={imagelist} targetName={['dog', 'pig', 'mouse']} />
+      <CardList images={imagelist} targetName={targetlist} />
       <Result targets={targetArry} targetNumber={targetNumber} />
     </div>
   );

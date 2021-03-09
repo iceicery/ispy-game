@@ -11,6 +11,7 @@ import bear from '../images/bear.png';
 import elephant from '../images/elephant.png';
 import frog from '../images/frog.png';
 import cow from '../images/cow.png';
+import { getRoles } from '@testing-library/dom';
 
 export const images = [
   { name: 'dog', src: dog },
@@ -28,6 +29,8 @@ export const images = [
   { name: 'cow', src: cow },
 ];
 
+const numberOfCopy = [2, 3, 4, 4, 5, 5, 6, 6, 3, 4, 2, 4, 3];
+
 function copyImages(times, images) {
   let newImages = [];
   for (var j = 0; j < times.length; j++) {
@@ -37,6 +40,7 @@ function copyImages(times, images) {
   }
   return newImages;
 }
+
 function shuffle(images) {
   let data = images;
   for (let i = data.length - 1; i > 0; i--) {
@@ -46,6 +50,19 @@ function shuffle(images) {
   return data;
 }
 
-export const imagelist = shuffle(
-  copyImages([2, 3, 4, 4, 5, 5, 6, 6, 3, 4, 2, 4, 3], images)
-);
+function getNamesOfArray(array) {
+  var nameOfArray = [];
+  array.map((item, i) => nameOfArray.push(item.name));
+  return nameOfArray;
+}
+
+function getNRandomTarget(array, n) {
+  const nameOfArray = getNamesOfArray(array);
+  shuffle(nameOfArray);
+  return nameOfArray.slice(0, n);
+}
+
+shuffle(numberOfCopy);
+
+export const imagelist = shuffle(copyImages(numberOfCopy, images));
+export const targetlist = getNRandomTarget(images, 3);

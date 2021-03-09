@@ -12,6 +12,7 @@ export default function Result({ targets, targetNumber }) {
     e.preventDefault();
     setIsPopupOpen(true);
   }
+
   return (
     <form className="result">
       {targets.map((target, i) => (
