@@ -8,9 +8,13 @@ export default function Result({ targets, targetNumber }) {
     setInputs(Object.assign([...inputs], { [idx]: value }));
   };
   const [isPopupOpen, setIsPopupOpen] = useState(false);
-  function onClick(e) {
+  function onConfirmClick(e) {
     e.preventDefault();
     setIsPopupOpen(true);
+  }
+  function onAgainClick(e) {
+    e.preventDefault();
+    window.location.reload(false);
   }
 
   return (
@@ -26,9 +30,14 @@ export default function Result({ targets, targetNumber }) {
           isPopupOpen={isPopupOpen}
         />
       ))}
-      <button className="result__confirm" onClick={onClick}>
-        confirm
-      </button>
+      <div className="result__button-list">
+        <button className="result__confirm" onClick={onConfirmClick}>
+          confirm
+        </button>
+        <button className="result__again" onClick={onAgainClick}>
+          play again
+        </button>
+      </div>
     </form>
   );
 }

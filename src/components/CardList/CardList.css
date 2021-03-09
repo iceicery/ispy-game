@@ -3,11 +3,11 @@
   margin: 0;
   padding: 10px;
   line-height: 0;
-  -webkit-column-count: 6;
+  -webkit-column-count: 7;
   -webkit-column-gap: 0px;
-  -moz-column-count: 6;
+  -moz-column-count: 7;
   -moz-column-gap: 0px;
-  column-count: 6;
+  column-count: 7;
   column-gap: 0px;
   position: relative;
 }
@@ -20,8 +20,4 @@
   left: 0;
   background-color: rgb(211, 55, 55);
   filter: invert(100%);
-}
-
-.cardlist__button {
-  color: violet;
 }

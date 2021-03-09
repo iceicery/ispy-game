@@ -11,7 +11,6 @@ import bear from '../images/bear.png';
 import elephant from '../images/elephant.png';
 import frog from '../images/frog.png';
 import cow from '../images/cow.png';
-import { getRoles } from '@testing-library/dom';
 
 export const images = [
   { name: 'dog', src: dog },

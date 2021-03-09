@@ -4,8 +4,21 @@
   margin: 0;
 }
 
+.result__button-list {
+  display: flex;
+  justify-content: center;
+  column-gap: 10px;
+}
+
 .result__confirm {
-  background-color: rgb(92, 6, 230);
+  background-color: rgb(43, 91, 223);
+  color: #fff;
+  border: none;
+  padding: 5px;
+}
+
+.result__again {
+  background-color: #06e690af;
   color: #fff;
   border: none;
   padding: 5px;
