@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import './ResultInput.css';
-import resultTranagle from '../../images/blueTriangle.png';
+import blueTriangle from '../../images/blueTriangle.png';
+import redTriangle from '../../images/redTriangle.png';
 
 export default function ResultInput({
   target,
@@ -8,10 +9,9 @@ export default function ResultInput({
   targetNumber,
   onChange,
   isCorrect,
+  isPopupOpen,
 }) {
-  const [isPopupOpen, setIsPopupOpen] = useState(false);
   function checkIsCorrect(e) {
-    setIsPopupOpen(true);
     if (parseInt(e.target.value) === targetNumber[idx]) {
       onChange(idx, true);
     } else {
@@ -39,17 +39,17 @@ export default function ResultInput({
             <img
               width="50"
               className="resultinput__triangle"
-              src={resultTranagle}
+              src={blueTriangle}
               alt="talking bubble triangle"
             />
             Great Job! You found them all!
           </div>
         ) : (
-          <div className="resultinput__found">
+          <div className="resultinput__notfound">
             <img
               width="50"
               className="resultinput__triangle"
-              src={resultTranagle}
+              src={redTriangle}
               alt="talking bubble triangle"
             />
             Try again! You can do it.

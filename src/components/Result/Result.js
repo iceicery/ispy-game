@@ -7,8 +7,13 @@ export default function Result({ targets, targetNumber }) {
   const setInput = (idx, value) => {
     setInputs(Object.assign([...inputs], { [idx]: value }));
   };
+  const [isPopupOpen, setIsPopupOpen] = useState(false);
+  function onClick(e) {
+    e.preventDefault();
+    setIsPopupOpen(true);
+  }
   return (
-    <ul className="result">
+    <form className="result">
       {targets.map((target, i) => (
         <ResultInput
           target={target}
@@ -17,8 +22,12 @@ export default function Result({ targets, targetNumber }) {
           targetNumber={targetNumber}
           onChange={setInput}
           isCorrect={inputs[i]}
+          isPopupOpen={isPopupOpen}
         />
       ))}
-    </ul>
+      <button className="result__confirm" onClick={onClick}>
+        confirm
+      </button>
+    </form>
   );
 }

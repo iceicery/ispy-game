@@ -24,6 +24,16 @@
   font-size: 10px;
 }
 
+.resultinput__notfound {
+  margin-left: 10x;
+  padding: 3px;
+  background-color: rgba(255, 102, 0, 0.98);
+  border-radius: 10px;
+  color: #fff;
+  position: relative;
+  font-size: 10px;
+}
+
 .resultinput__triangle {
   object-fit: contain;
   width: 20px;
