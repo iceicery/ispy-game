@@ -19,17 +19,19 @@ export default function Result({ targets, targetNumber }) {
 
   return (
     <form className="result">
-      {targets.map((target, i) => (
-        <ResultInput
-          target={target}
-          key={i}
-          idx={i}
-          targetNumber={targetNumber}
-          onChange={setInput}
-          isCorrect={inputs[i]}
-          isPopupOpen={isPopupOpen}
-        />
-      ))}
+      <ul className="result__input-list">
+        {targets.map((target, i) => (
+          <ResultInput
+            target={target}
+            key={i}
+            idx={i}
+            targetNumber={targetNumber}
+            onChange={setInput}
+            isCorrect={inputs[i]}
+            isPopupOpen={isPopupOpen}
+          />
+        ))}
+      </ul>
       <div className="result__button-list">
         <button className="result__confirm" onClick={onConfirmClick}>
           confirm

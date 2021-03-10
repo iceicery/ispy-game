@@ -37,7 +37,11 @@ const targetNumber = getNumberOfTarget(imagelist, targetlist);
 function App() {
   return (
     <div className="App">
-      <h1>I-Spy game</h1>
+      <h1 className="App__title">I-Spy game</h1>
+      <p className="App__description">
+        Find the animals, type the number and click confirm to see if you find
+        them all. You could click the animal to help you count. Have fun!
+      </p>
       <CardList images={imagelist} targetName={targetlist} />
       <Result targets={targetArry} targetNumber={targetNumber} />
     </div>

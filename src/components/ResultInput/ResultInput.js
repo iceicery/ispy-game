@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React from 'react';
 import './ResultInput.css';
 import blueTriangle from '../../images/blueTriangle.png';
 import redTriangle from '../../images/redTriangle.png';

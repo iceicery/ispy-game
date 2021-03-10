@@ -21,3 +21,47 @@
   background-color: rgb(211, 55, 55);
   filter: invert(100%);
 }
+
+.cardlist-box {
+  position: relative;
+}
+
+.cardlist__btn {
+  position: absolute;
+  color: #fff;
+  width: 30px;
+  background-color: transparent;
+  bottom: 10px;
+  right: 10px;
+}
+
+.cardlist__btn:hover {
+  cursor: pointer;
+  opacity: 0.7;
+}
+
+@media (min-width: 768px) {
+  .cardlist {
+    padding: 20px;
+    line-height: 0;
+    -webkit-column-count: 8;
+    -webkit-column-gap: 0px;
+    -moz-column-count: 8;
+    -moz-column-gap: 0px;
+    column-count: 8;
+    column-gap: 0px;
+  }
+}
+
+@media (min-width: 1024px) {
+  .cardlist {
+    padding: 20px;
+    line-height: 0;
+    -webkit-column-count: 15;
+    -webkit-column-gap: 0px;
+    -moz-column-count: 15;
+    -moz-column-gap: 0px;
+    column-count: 15;
+    column-gap: 0px;
+  }
+}

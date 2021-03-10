@@ -44,3 +44,39 @@
   top: 20%;
   z-index: -1;
 }
+
+@media (min-width: 768px) {
+  .resultinput__item {
+    column-gap: 5px;
+    margin: 5px;
+  }
+
+  .resultinput__input {
+    margin-left: 20px;
+    font-size: 20px;
+  }
+
+  .resultinput__img {
+    width: 60px;
+  }
+
+  .resultinput__found {
+    margin-left: 40x;
+    padding: 10px;
+    border-radius: 5px;
+    font-size: 20px;
+  }
+
+  .resultinput__notfound {
+    margin-left: 40x;
+    padding: 10px;
+    border-radius: 5px;
+    font-size: 20px;
+  }
+
+  .resultinput__triangle {
+    width: 20px;
+    left: -20px;
+    top: 20%;
+  }
+}
