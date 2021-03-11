@@ -2,7 +2,7 @@ import React, { useState } from 'react';
 import ResultInput from '../ResultInput/ResultInput';
 import './Result.css';
 
-export default function Result({ targets, targetNumber }) {
+export default function Result({ targets, targetNumber, changeTheme }) {
   const [inputs, setInputs] = useState(Array(targets.length).fill(''));
   const setInput = (idx, value) => {
     setInputs(Object.assign([...inputs], { [idx]: value }));
@@ -15,6 +15,10 @@ export default function Result({ targets, targetNumber }) {
   function onAgainClick(e) {
     e.preventDefault();
     window.location.reload(false);
+  }
+  function onChangeThemeClick(e) {
+    e.preventDefault();
+    changeTheme();
   }
 
   return (
@@ -33,11 +37,20 @@ export default function Result({ targets, targetNumber }) {
         ))}
       </ul>
       <div className="result__button-list">
-        <button className="result__confirm" onClick={onConfirmClick}>
+        <button
+          className="result__button result__confirm"
+          onClick={onConfirmClick}
+        >
           confirm
         </button>
-        <button className="result__again" onClick={onAgainClick}>
+        <button className="result__button result__again" onClick={onAgainClick}>
           play again
+        </button>
+        <button
+          className="result__button result__theme"
+          onClick={onChangeThemeClick}
+        >
+          Change Theme
         </button>
       </div>
     </form>

@@ -12,7 +12,7 @@ import elephant from '../images/elephant.png';
 import frog from '../images/frog.png';
 import cow from '../images/cow.png';
 
-export const images = [
+export const images_animal = [
   { name: 'dog', src: dog },
   { name: 'lamb', src: lamb },
   { name: 'mouse', src: mouse },
@@ -63,5 +63,7 @@ function getNRandomTarget(array, n) {
 
 shuffle(numberOfCopy);
 
-export const imagelist = shuffle(copyImages(numberOfCopy, images));
-export const targetlist = getNRandomTarget(images, 3);
+export const imagelist_animal = shuffle(
+  copyImages(numberOfCopy, images_animal)
+);
+export const targetlist_animal = getNRandomTarget(images_animal, 3);

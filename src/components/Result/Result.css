@@ -10,29 +10,27 @@
   column-gap: 10px;
 }
 
-.result__confirm {
-  background-color: rgb(43, 91, 223);
+.result__button {
   color: #fff;
   border: none;
   padding: 5px;
   font-size: 20px;
+}
+
+.result__confirm {
+  background-color: rgb(43, 91, 223);
 }
 
 .result__again {
   background-color: #06e690af;
-  color: #fff;
-  border: none;
-  padding: 5px;
-  font-size: 20px;
+}
+
+.result__theme {
+  background-color: #f739ce79;
 }
 
 @media (min-width: 768px) {
-  .result__confirm {
-    padding: 10px;
-    font-size: 30px;
-  }
-
-  .result__again {
+  .result__button {
     padding: 10px;
     font-size: 30px;
   }

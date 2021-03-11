@@ -1,7 +1,6 @@
-import React, { useState } from 'react';
+import React from 'react';
 import './CardList.css';
 import Card from '../Card/Card';
-import clear from '../../images/clear.png';
 
 export default function CardList({ images, targetName }) {
   return (
