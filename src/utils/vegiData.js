@@ -64,4 +64,4 @@ function getNRandomTarget(array, n) {
 shuffle(numberOfCopy);
 
 export const imagelist_vegi = shuffle(copyImages(numberOfCopy, images_vegi));
-export const targetlist_vegi = getNRandomTarget(images_vegi, 3);
+export const targetlist_vegi = getNRandomTarget(images_vegi, 2);

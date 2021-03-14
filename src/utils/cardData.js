@@ -66,4 +66,4 @@ shuffle(numberOfCopy);
 export const imagelist_animal = shuffle(
   copyImages(numberOfCopy, images_animal)
 );
-export const targetlist_animal = getNRandomTarget(images_animal, 3);
+export const targetlist_animal = getNRandomTarget(images_animal, 2);

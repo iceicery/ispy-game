@@ -2,18 +2,40 @@
   text-align: center;
 }
 
+.App__text-container {
+  display: inline;
+}
+
+.App__text-container_hidden {
+  display: none;
+}
+
 .App__title {
-  font-size: 30px;
+  font-size: 20px;
+  font-weight: 700;
 }
 
 .App__description {
   margin: 10px;
-  font-size: 20px;
+  font-size: 18px;
+}
+
+.App__more {
+  width: 20px;
+}
+
+.APP__more:hover {
+  opacity: 0.7;
+  cursor: pointer;
 }
 
 @media (min-width: 768px) {
   .App__title {
     font-size: 50px;
+  }
+
+  .App__more {
+    width: 40px;
   }
 
   .App__description {
@@ -23,6 +45,16 @@
 }
 
 @media (min-width: 1024px) {
+  .App {
+    display: flex;
+    flex-direction: row-reverse;
+  }
+  .App__text-container_hidden {
+    display: inline;
+  }
+  .App__more {
+    display: none;
+  }
   .App__title {
     font-size: 70px;
   }
@@ -30,5 +62,9 @@
   .App__description {
     margin: 20px 80px;
     font-size: 30px;
+  }
+
+  .App__game {
+    width: 55%;
   }
 }

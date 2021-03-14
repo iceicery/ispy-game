@@ -1,8 +1,10 @@
 import React, { useState } from 'react';
 import './Card.css';
 
-export default function Card({ image, id, targetName }) {
+export default function Card({ image, id, targetArry }) {
   const [isTarget, setIsTarget] = useState(false);
+  const targetName = [];
+  targetArry.forEach((item) => targetName.push(item.name));
 
   function onClickImg() {
     if (targetName.includes(image.name)) {
