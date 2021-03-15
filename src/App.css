@@ -2,6 +2,10 @@
   text-align: center;
 }
 
+.App__laptop {
+  display: none;
+}
+
 .App__text-container {
   display: inline;
 }
@@ -45,9 +49,17 @@
 }
 
 @media (min-width: 1024px) {
-  .App {
+  .App__phone {
+    display: none;
+  }
+  .App__laptop {
     display: flex;
-    flex-direction: row-reverse;
+    gap: 10px;
+    justify-content: center;
+    align-items: center;
+  }
+  .App__text-container {
+    max-width: 700px;
   }
   .App__text-container_hidden {
     display: inline;
@@ -62,9 +74,5 @@
   .App__description {
     margin: 20px 80px;
     font-size: 30px;
-  }
-
-  .App__game {
-    width: 55%;
   }
 }

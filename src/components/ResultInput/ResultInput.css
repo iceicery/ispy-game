@@ -8,7 +8,7 @@
 .resultinput__input {
   margin-left: 10px;
   font-size: 15px;
-  width: min-content;
+  width: 150px;
 }
 
 .resultinput__img {
@@ -54,6 +54,7 @@
   .resultinput__input {
     margin-left: 20px;
     font-size: 20px;
+    width: 200px;
   }
 
   .resultinput__img {

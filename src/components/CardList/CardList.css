@@ -57,11 +57,11 @@
   .cardlist {
     padding: 20px;
     line-height: 0;
-    -webkit-column-count: 15;
+    -webkit-column-count: 9;
     -webkit-column-gap: 0px;
-    -moz-column-count: 15;
+    -moz-column-count: 9;
     -moz-column-gap: 0px;
-    column-count: 15;
+    column-count: 9;
     column-gap: 0px;
   }
 }

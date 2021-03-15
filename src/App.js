@@ -8,6 +8,7 @@ import {
 } from './utils/cardData';
 import { images_vegi, imagelist_vegi, targetlist_vegi } from './utils/vegiData';
 import Result from './components/Result/Result';
+import Footer from './components/Footer/Footer';
 import moreIcon from './images/more.svg';
 
 function App() {
@@ -71,27 +72,48 @@ function App() {
     : 'App__text-container_hidden';
   return (
     <div className="App">
-      <div className={textContainerClass}>
-        <h1 className="App__title">I-Spy game</h1>
-        <p className="App__description">
-          Find the animals, type the number and click confirm to see if you find
-          them all. You could click the animal to help you count. Have fun!
-        </p>
+      <div className="App__phone">
+        <div className={textContainerClass}>
+          <h1 className="App__title">I-Spy game</h1>
+          <p className="App__description">
+            Find the animals, type the number and click confirm to see if you
+            find them all. You could click the animal to help you count. Have
+            fun!
+          </p>
+        </div>
+        <div className="App__game">
+          <img
+            src={moreIcon}
+            alt="click to get description"
+            className="App__more"
+            onClick={handleToggleText}
+          />
+          <CardList images={imagelist} targetArry={targetArry} />
+          <Result
+            targets={targetArry}
+            targetNumber={targetNumber}
+            changeTheme={changeTheme}
+          />
+        </div>
       </div>
-      <div className="App__game">
-        <img
-          src={moreIcon}
-          alt="click to get description"
-          className="App__more"
-          onClick={handleToggleText}
-        />
+      <div className="App__laptop">
+        <div className={textContainerClass}>
+          <h1 className="App__title">I-Spy game</h1>
+          <p className="App__description">
+            Find the animals, type the number and click confirm to see if you
+            find them all. You could click the animal to help you count. Have
+            fun!
+          </p>
+          <Result
+            targets={targetArry}
+            targetNumber={targetNumber}
+            changeTheme={changeTheme}
+          />
+        </div>
+
         <CardList images={imagelist} targetArry={targetArry} />
-        <Result
-          targets={targetArry}
-          targetNumber={targetNumber}
-          changeTheme={changeTheme}
-        />
       </div>
+      <Footer />
     </div>
   );
 }

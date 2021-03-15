@@ -34,11 +34,9 @@
     padding: 10px;
     font-size: 30px;
   }
-}
-
-@media (min-width: 1024px) {
   .result__input-list {
     display: flex;
-    justify-content: space-between;
+    justify-content: center;
+    gap: 10px;
   }
 }
