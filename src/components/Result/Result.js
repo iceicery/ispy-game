@@ -20,7 +20,7 @@ export default function Result({ targets, targetNumber, changeTheme }) {
     e.preventDefault();
     changeTheme();
   }
-
+  const popupClass = isPopupOpen ? 'result__popup' : 'result__popup-hidden';
   return (
     <form className="result">
       <ul className="result__input-list">
@@ -52,6 +52,25 @@ export default function Result({ targets, targetNumber, changeTheme }) {
         >
           Change Theme
         </button>
+      </div>
+      <div className={popupClass}>
+        {inputs.some((item) => item === false) ? (
+          <>
+            <img
+              src="https://media1.tenor.com/images/9c9520226d408801a72861562d41d52d/tenor.gif?itemid=4601461"
+              alt="test"
+            />
+            <p>Try Again! You can do it!</p>
+          </>
+        ) : (
+          <>
+            <img
+              src="https://media.tenor.com/images/324ebfe888cb034c05a8f16c483de109/tenor.gif"
+              alt="text"
+            />
+            <p>'Great Job! You did it!'</p>
+          </>
+        )}
       </div>
     </form>
   );

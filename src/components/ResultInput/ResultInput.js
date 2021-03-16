@@ -33,28 +33,6 @@ export default function ResultInput({
         alt={target.name}
         width="50"
       />
-      {isPopupOpen &&
-        (isCorrect ? (
-          <div className="resultinput__found">
-            <img
-              width="50"
-              className="resultinput__triangle"
-              src={blueTriangle}
-              alt="talking bubble triangle"
-            />
-            Great Job! You found them all!
-          </div>
-        ) : (
-          <div className="resultinput__notfound">
-            <img
-              width="50"
-              className="resultinput__triangle"
-              src={redTriangle}
-              alt="talking bubble triangle"
-            />
-            Try again! You can do it.
-          </div>
-        ))}
     </li>
   );
 }

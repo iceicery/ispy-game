@@ -2,6 +2,7 @@
   list-style: none;
   padding: 0;
   margin: 0;
+  position: relative;
 }
 
 .result__button-list {
@@ -27,6 +28,17 @@
 
 .result__theme {
   background-color: #f739ce79;
+}
+
+.result__popup {
+  position: absolute;
+  top: 0;
+  right: 20%;
+  display: inline;
+}
+
+.result__popup-hidden {
+  display: none;
 }
 
 @media (min-width: 768px) {
