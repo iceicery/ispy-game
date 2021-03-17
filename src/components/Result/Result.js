@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import ResultInput from '../ResultInput/ResultInput';
 import './Result.css';
 
@@ -20,7 +20,22 @@ export default function Result({ targets, targetNumber, changeTheme }) {
     e.preventDefault();
     changeTheme();
   }
+  function onClickClose(e) {
+    e.preventDefault();
+    setIsPopupOpen(false);
+  }
   const popupClass = isPopupOpen ? 'result__popup' : 'result__popup-hidden';
+  useEffect(() => {
+    const handleEsc = (event) => {
+      if (event.keyCode === 27) {
+        setIsPopupOpen(false);
+      }
+    };
+    window.addEventListener('keydown', handleEsc);
+    return () => {
+      window.removeEventListener('keydown', handleEsc);
+    };
+  }, []);
   return (
     <form className="result">
       <ul className="result__input-list">
@@ -54,21 +69,29 @@ export default function Result({ targets, targetNumber, changeTheme }) {
         </button>
       </div>
       <div className={popupClass}>
-        {inputs.some((item) => item === false) ? (
+        <div
+          className="result__popup_overlay result__popup_overlay-fade"
+          onClick={onClickClose}
+        >
+          CLOSE
+        </div>
+        {inputs.some((item) => item === false || item === '') ? (
           <>
             <img
               src="https://media1.tenor.com/images/9c9520226d408801a72861562d41d52d/tenor.gif?itemid=4601461"
-              alt="test"
+              alt="you missed"
+              className="result__popup_img"
             />
-            <p>Try Again! You can do it!</p>
+            <p className="result__popup_text">Try Again! You can do it!</p>
           </>
         ) : (
           <>
             <img
               src="https://media.tenor.com/images/324ebfe888cb034c05a8f16c483de109/tenor.gif"
-              alt="text"
+              alt="celebrate"
+              className="result__popup_img"
             />
-            <p>'Great Job! You did it!'</p>
+            <p className="result__popup_text">Great Job! You did it!</p>
           </>
         )}
       </div>

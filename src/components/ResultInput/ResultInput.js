@@ -1,16 +1,6 @@
 import React from 'react';
 import './ResultInput.css';
-import blueTriangle from '../../images/blueTriangle.png';
-import redTriangle from '../../images/redTriangle.png';
-
-export default function ResultInput({
-  target,
-  idx,
-  targetNumber,
-  onChange,
-  isCorrect,
-  isPopupOpen,
-}) {
+export default function ResultInput({ target, idx, targetNumber, onChange }) {
   function checkIsCorrect(e) {
     if (parseInt(e.target.value) === targetNumber[idx]) {
       onChange(idx, true);
